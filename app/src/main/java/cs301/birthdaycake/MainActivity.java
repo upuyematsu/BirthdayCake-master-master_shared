@@ -1,4 +1,5 @@
 package cs301.birthdaycake;
+import android.view.SurfaceView;
 import android.view.View;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
