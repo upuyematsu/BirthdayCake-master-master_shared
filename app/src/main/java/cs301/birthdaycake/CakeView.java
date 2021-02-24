@@ -119,6 +119,36 @@ public class CakeView extends SurfaceView {
         }
     }
 
+   /* public void drawBalloon(Canvas canvas, float centerX, float centerY){
+        Paint balloonPaint = new Paint();
+        balloonPaint.setColor(Color.BLUE);
+        centerX = this.cakeModel.x;
+        centerY = this.cakeModel.y;
+        float balloonWidth = 20;
+        float balloonHeight = 30;
+
+            canvas.drawOval(centerX - balloonWidth, centerY - balloonHeight,
+                    centerX + balloonWidth, centerY + balloonHeight, balloonPaint);
+
+
+    }*/
+
+    public void drawBalloon(Canvas canvas, float x, float y){
+        x = this.cakeModel.x;
+        y = this.cakeModel.y;
+        float balloonWidth = 20;
+        float balloonHeight = 30;
+        Paint balloonPaint = new Paint();
+        balloonPaint.setColor(Color.BLUE);
+        if(this.cakeModel.hasTouched == true) {
+            canvas.drawOval(x - balloonWidth, y - balloonHeight,
+                    x + balloonWidth, y + balloonHeight, balloonPaint);
+        }
+    }
+
+
+
+
     /**
      * onDraw is like "paint" in a regular Java program.  While a Canvas is
      * conceptually similar to a Graphics in javax.swing, the implementation has
@@ -154,6 +184,10 @@ public class CakeView extends SurfaceView {
         //Now a candle in the center
         drawCandle(canvas, cakeLeft + cakeWidth/2 +200 - candleWidth, cakeTop);
 
+
+
+
+           drawBalloon(canvas, this.cakeModel.x, this.cakeModel.y);
     }//onDraw
 
 }//class CakeView

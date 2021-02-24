@@ -2,8 +2,13 @@ package cs301.birthdaycake;
 
 public class CakeModel {
 
-    boolean lit = true;
-    int candleNum = 2;
-    boolean frosting = true;
-    boolean hasCandles = true;
+    public boolean lit = true;
+    public int candleNum = 2;
+    public boolean frosting = true;
+    public  boolean hasCandles = true;
+    public boolean hasTouched = false;
+    public float x;
+    public float y;
+
 }
+
