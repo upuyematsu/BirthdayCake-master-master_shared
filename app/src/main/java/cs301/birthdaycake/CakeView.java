@@ -66,8 +66,17 @@ public class CakeView extends SurfaceView {
         setBackgroundColor(Color.WHITE);  //better than black default
 
     }
+    public void getCord(Canvas canvas, float x, float y){
+        x = this.cakeModel.x;
+        y = this.cakeModel.y;
+        String xString = String.valueOf(x);
+        String yString = String.valueOf(y);
+        String combinedStrings = xString + ", " + yString;
+        if(this.cakeModel.hasTouched == true) {
+            canvas.drawText(combinedStrings, 1400, 600, innerFlamePaint);
+        }
 
-
+    }
 
     //getter for CakeModel
     public CakeModel getCakeModel(){
@@ -83,7 +92,7 @@ public class CakeView extends SurfaceView {
     public void drawCandle(Canvas canvas, float left, float bottom) {
         //canvas.drawRect(cakeWidth/3, bottom-candleHeight, cakeWidth/3 + candleWidth, bottom, candlePaint);
        // canvas.drawRect((cakeWidth*2)/3, bottom-candleHeight, (cakeWidth*2)/3 + candleWidth, bottom, candlePaint);
-        if (this.cakeModel.hasCandles == true) {
+        if (this.cakeModel.hasCandles == true){
 
             int count = 0;
             float widthNum = this.cakeModel.candleNum+1;
@@ -153,6 +162,8 @@ public class CakeView extends SurfaceView {
 
         //Now a candle in the center
         drawCandle(canvas, cakeLeft + cakeWidth/2 +200 - candleWidth, cakeTop);
+
+        getCord(canvas, this.cakeModel.x, this.cakeModel.y);
 
     }//onDraw
 

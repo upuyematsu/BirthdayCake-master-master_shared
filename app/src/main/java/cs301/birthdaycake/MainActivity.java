@@ -13,6 +13,7 @@ import android.widget.ToggleButton;
 public class MainActivity extends AppCompatActivity {
 
     private CakeView myCakeView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +32,10 @@ public class MainActivity extends AppCompatActivity {
         SeekBar mySeekBar = findViewById(R.id.seekBar);
         mySeekBar.setOnSeekBarChangeListener(cakeController);
 
+        myCakeView.setOnTouchListener(cakeController);
+       /* public void goodbye (View button){
 
-    }
-
-
-        public void goodbye(View button){
-
-        Log.i("button", "goodbye");
+            Log.i("button", "goodbye");
+        }*/
     }
 }
